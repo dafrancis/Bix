@@ -23,7 +23,6 @@
         this.root = '/';
         this.forceHash = false;
         this.hashBang = true;
-        this.local = false;
     };
 
     /**
@@ -101,9 +100,7 @@
                 urls[i].onclick = clickEvent;
             }
         }
-        if (base.local) {
-            base.matchUrl(window.location.pathname.replace(new RegExp("^" + base.root), '/'));
-        }
+        base.matchUrl(window.location.pathname.replace(new RegExp("^" + base.root), '/'));
     };
 
     /**
@@ -165,8 +162,6 @@
              *     root : allows you to set the root (Default '/')
              *     forceHash : allows you to force Bix into using hash urls (Default false)
              *     hashBang : allows you to choose wether you want the urls to be hashbangs or not (Default true)
-             *     local : if the page changes are avaliable locally then set this to true otherwise
-             *             if the page is loaded by a server this needs to be false (Default false)
              *
              * @param {object} options Object with a set of options for bix.
              */
