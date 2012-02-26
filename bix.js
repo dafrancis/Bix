@@ -100,7 +100,9 @@
                 urls[i].onclick = clickEvent;
             }
         }
-        base.matchUrl(window.location.pathname.replace(new RegExp("^" + base.root), '/'));
+        window.onpopstate = function () {
+            base.matchUrl(window.location.pathname.replace(new RegExp("^" + base.root), '/'));
+        };
     };
 
     /**
